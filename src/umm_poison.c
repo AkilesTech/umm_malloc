@@ -1,3 +1,5 @@
+#include "app_error.h"
+
 /* poisoning (UMM_POISON_CHECK) {{{ */
 #if defined(UMM_POISON_CHECK)
 #define POISON_BYTE (0xa5)
@@ -52,6 +54,7 @@ static int check_poison( const unsigned char *ptr, size_t poison_size,
     DBGLOG_ERROR( "No poison %s block at: 0x%lx, actual data:", where, (unsigned long)ptr);
     dump_mem(ptr, poison_size);
     DBGLOG_ERROR( "\n" );
+    APP_ERROR_CHECK_BOOL(false);
   }
 
   return ok;

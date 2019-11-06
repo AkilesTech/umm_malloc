@@ -16,6 +16,11 @@ void *umm_calloc( size_t num, size_t size );
 void *umm_realloc( void *ptr, size_t size );
 void  umm_free( void *ptr );
 
+void *umm_poison_malloc( size_t size );
+void *umm_poison_calloc( size_t num, size_t size );
+void *umm_poison_realloc( void *ptr, size_t size );
+void  umm_poison_free( void *ptr );
+
 
 /* ------------------------------------------------------------------------ */
 
